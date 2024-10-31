@@ -5,7 +5,8 @@ const app = express()
 
 const connection = require('./db/connection')
 
-// Models
+// Models - Importe aqui os models das tabelas criadas e descomente ao rodar a primeira vez
+// const Funcionario = require('./models/Funcionario')
 
 // import routes
 
@@ -24,6 +25,7 @@ app.use(express.static('public'))
 // use routes
 
 connection
+  // .sync({ alter: true }) // quando for rodar a primeira vez a sua tabela descomente essa e comente a de baixo
   .sync()
   .then(() => {
     app.listen(3000)
