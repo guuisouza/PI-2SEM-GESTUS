@@ -1,16 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <link rel='shortcut icon' href='/imgs/favicon.ico' type='image/x-icon' />
+    <link rel='stylesheet' href='/css/styles.css' />
+    <title>Gestus</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="/css/styles.css">
-  <title>Gestus</title>
-</head>
-
-<body>
-  {{{body}}}
-</body>
-
+  <body>
+    <div>
+      <aside class='menu'>
+        <nav>
+          <ul>
+            <li>
+              <a href='/'>Tarefas</a>
+              <ul class='submenu'>
+                <li><a href='/'>Pendentes</a></li>
+                <li><a href='/'>Concluídas</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href='/finance'>Financeiro</a>
+              <ul class='submenu'>
+                <li><a href='/finance'>Cadastrar Gasto</a></li>
+                <li><a href='/finance/all'>Visualizar Gastos</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href='/'>Feedback</a>
+              <ul class='submenu'>
+                <li><a href='/'></a></li>
+                <li><a href='/'></a></li>
+              </ul>
+            </li>
+            <li>
+              <a href='/'>Cadastro</a>
+              <ul class='submenu'>
+                <li><a href='/'>Cadastro</a></li>
+                <li><a href='/'>Cadastro</a></li>
+              </ul>
+            </li>
+            <li><a href='/login' class='btn-submit'>Sair</a></li>
+          </ul>
+        </nav>
+      </aside>
+    </div>
+    <main>
+      {{{body}}}
+    </main>
+    <footer>
+      <p>&copy; 2024 Gerenciador Financeiro. Todos os direitos reservados.</p>
+    </footer>
+  </body>
 </html>
