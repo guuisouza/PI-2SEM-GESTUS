@@ -7,8 +7,8 @@ const app = express()
 const connection = require('./db/connection')
 
 // Models - Importe aqui os models das tabelas criadas e descomente ao rodar a primeira vez
-const Funcionario = require('./models/Funcionario')
-const Finance = require('./models/Finance')
+// const Funcionario = require('./models/Funcionario')
+// const Finance = require('./models/Finance')
 
 // import routes
 const financeRoutes = require('./routes/financeRoutes')
@@ -25,7 +25,7 @@ app.set('views', path.join(__dirname, 'views'))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
-app.use(express.static('public'))
+app.use(express.static('src/public'))
 
 //Rota
 app.use('/finance', financeRoutes)
