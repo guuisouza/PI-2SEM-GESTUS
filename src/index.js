@@ -12,6 +12,7 @@ const connection = require('./db/connection')
 
 // import routes
 const financeRoutes = require('./routes/financeRoutes')
+const funcionarioRoutes = require('./routes/funcionarioRoutes')
 const authRoutes = require('./routes/authRoutes')
 
 // controllers
@@ -29,13 +30,14 @@ app.use(express.static('src/public'))
 
 //Rota
 app.use('/finance', financeRoutes)
+app.use('/funcionario', funcionarioRoutes)
 app.use('/', authRoutes)
 
 // use routes
 
 connection
-  .sync({ alter: true }) // quando for rodar a primeira vez a sua tabela descomente essa e comente a de baixo
-  //.sync()
+  // .sync({ alter: true }) // quando for rodar a primeira vez a sua tabela descomente essa e comente a de baixo
+  .sync()
   .then(() => {
     app.listen(3000)
   })
