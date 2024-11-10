@@ -169,14 +169,15 @@ tr:hover {
 }
 
 /* =====================
-   Estilos do Menu Superior
+      Estilos do Menu
    ===================== */
 nav {
   background-color: var(--secondary-color);
   color: #fff;
-  padding: 10px 20px;
+  padding: 10px 30px;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   position: relative;
   z-index: 1000;
 }
@@ -191,6 +192,8 @@ nav ul {
 nav ul li {
   position: relative;
   margin-left: 20px;
+  display: flex;
+  align-items: center;
 }
 
 nav ul li a {
@@ -204,6 +207,8 @@ nav ul li a:hover {
   background-color: var(--primary-color);
 }
 
+/* Submenu */
+
 nav ul li .submenu {
   display: none;
   background-color: var(--primary-color);
@@ -212,17 +217,86 @@ nav ul li .submenu {
   top: 100%;
   min-width: 150px;
   z-index: 1000;
+  border-radius: 6px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 nav ul li:hover .submenu {
   display: block;
 }
+nav ul li .submenu li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
 nav ul li .submenu li a {
+  display: block;
   padding: 10px 15px;
+  color: #fff;
+  text-decoration: none;
   background-color: var(--primary-color);
+  transition: background-color 0.3s;
 }
 
 nav ul li .submenu li a:hover {
+  background-color: var(--primary-color-dark);
+}
+
+/* =====================
+    Página de login
+   ===================== */
+
+#loginForm {
+  width: 100%;
+  max-width: 400px; /* Limita a largura do formulário */
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px var(--shadow-light);
+  margin: 100px auto;
+}
+
+.login-group {
+  margin-bottom: 20px;
+}
+
+.login-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--secondary-color);
+  font-weight: 600;
+}
+
+.login-group input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+.login-group input:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.btn-submit {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  display: block;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
   background-color: var(--primary-color-dark);
 }

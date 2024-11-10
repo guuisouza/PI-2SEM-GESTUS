@@ -1,5 +1,5 @@
 const renderLoginPage = (req, res) => {
-  res.render('login/login')
+  res.render('login/login', { isLoginPage: true })
 }
 
 const loginUser = (req, res) => {
