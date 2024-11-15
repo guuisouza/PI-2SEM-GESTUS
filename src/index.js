@@ -9,11 +9,13 @@ const connection = require('./db/connection')
 // Models - Importe aqui os models das tabelas criadas e descomente ao rodar a primeira vez
 // const Funcionario = require('./models/Funcionario')
 // const Finance = require('./models/Finance')
+// const Feedback = require('./models/Feedback')
 
 // import routes
 const financeRoutes = require('./routes/financeRoutes')
 const funcionarioRoutes = require('./routes/funcionarioRoutes')
 const authRoutes = require('./routes/authRoutes')
+const feedbackRoutes = require('./routes/feedbackRoutes')
 
 // controllers
 
@@ -31,6 +33,7 @@ app.use(express.static('src/public'))
 //Rota
 app.use('/finance', financeRoutes)
 app.use('/funcionario', funcionarioRoutes)
+app.use('/feedback', feedbackRoutes)
 app.use('/', authRoutes)
 
 // use routes
