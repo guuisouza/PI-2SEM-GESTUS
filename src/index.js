@@ -16,6 +16,7 @@ const financeRoutes = require('./routes/financeRoutes')
 const funcionarioRoutes = require('./routes/funcionarioRoutes')
 const authRoutes = require('./routes/authRoutes')
 const feedbackRoutes = require('./routes/feedbackRoutes')
+const TasksRoutes = require('./routes/TasksRoutes')
 
 // controllers
 
@@ -35,6 +36,7 @@ app.use('/finance', financeRoutes)
 app.use('/funcionario', funcionarioRoutes)
 app.use('/feedback', feedbackRoutes)
 app.use('/', authRoutes)
+app.use('/', TasksRoutes)
 
 // use routes
 
