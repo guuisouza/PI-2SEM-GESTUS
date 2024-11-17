@@ -1,0 +1,35 @@
+<header>
+  <h1>Lista de Tarefas Pendentes</h1>
+</header>
+<main>
+  <table>
+    <thead>
+      <tr>
+        <th>Título</th>
+        <th>Descrição</th>
+        <th>Data</th>
+        <th>Prioridade</th>
+        <th>Gerenciar</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each records}}
+        <tr>
+          <td>{{this.titulo}}</td>
+          <td>{{this.descricao}}</td>
+          <td>{{this.data}}</td>
+          <td>{{this.prioridade}}</td>
+          <td>
+            <a href='/tarefas/update/{{this.id}}' class='btn-edit'>Editar</a>
+            <a href='/tarefas/mark-complete/{{this.id}}' class='btn-submit'>Concluir</a>
+            <a href='/tarefas/delete/{{this.id}}' class='btn-delete'>Excluir</a>
+          </td>
+        </tr>
+      {{else}}
+        <tr>
+          <td colspan='5'>Nenhuma tarefa pendente encontrada.</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</main>
