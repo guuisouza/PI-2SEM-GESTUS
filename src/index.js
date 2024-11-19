@@ -36,12 +36,12 @@ app.use('/finance', financeRoutes)
 app.use('/funcionario', funcionarioRoutes)
 app.use('/feedback', feedbackRoutes)
 app.use('/', authRoutes)
-app.use('/', TasksRoutes)
+app.use('/tasks', TasksRoutes)
 
 // use routes
 
 connection
-  // .sync({ alter: true }) // quando for rodar a primeira vez a sua tabela descomente essa e comente a de baixo
+  //.sync({ alter: true }) // quando for rodar a primeira vez a sua tabela descomente essa e comente a de baixo
   .sync()
   .then(() => {
     app.listen(3000)
