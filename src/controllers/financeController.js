@@ -1,15 +1,12 @@
 const Finance = require('../models/Finance')
 
-// Renderiza a página de criação de registro de finanças
 const renderCreateFinancePage = (req, res) => {
   res.render('finance/Finance')
 }
 
-// Cria um novo registro de finanças
 const createFinanceRecord = async (req, res) => {
   const { name, cargo, description, amount, date } = req.body
 
-  // Verificando todos os campos necessários
   if (!name || !cargo || !description || !amount || !date) {
     return res.status(400).json({
       message: 'Name, cargo, description, amount, and date are required.'
@@ -25,7 +22,6 @@ const createFinanceRecord = async (req, res) => {
   }
 }
 
-// Deleta um registro de finanças
 const deleteFinanceRecord = async (req, res) => {
   const { id } = req.params
 
@@ -38,7 +34,6 @@ const deleteFinanceRecord = async (req, res) => {
   }
 }
 
-// Renderiza a página de edição de registro de finanças
 const renderUpdateFinancePage = async (req, res) => {
   const { id } = req.params
 
@@ -57,11 +52,9 @@ const renderUpdateFinancePage = async (req, res) => {
   }
 }
 
-// Atualiza um registro de finanças
 const updateFinanceRecord = async (req, res) => {
   const { id, name, cargo, description, amount, date } = req.body
 
-  // Verificando todos os campos necessários
   if (!id || !name || !cargo || !description || !amount || !date) {
     return res.status(400).json({
       message: 'ID, name, cargo, description, amount, and date are required.'
@@ -85,7 +78,6 @@ const updateFinanceRecord = async (req, res) => {
   }
 }
 
-// Visualiza todos os registros de finanças
 const viewAllFinanceRecords = async (req, res) => {
   try {
     const records = await Finance.findAll()
@@ -97,7 +89,6 @@ const viewAllFinanceRecords = async (req, res) => {
   }
 }
 
-// Exporta as funções do controlador
 module.exports = {
   renderCreateFinancePage,
   createFinanceRecord,

@@ -35,7 +35,6 @@ const viewPendingTasks = async (req, res) => {
       where: { status: 'pendente' }
     })
 
-    // Converte as instâncias Sequelize em objetos simples
     const tarefasJSON = tarefasPendentes.map((tarefa) => tarefa.toJSON())
 
     console.log('Tarefas Pendentes:', tarefasJSON)
@@ -68,7 +67,7 @@ const deleteTasksRecord = async (req, res) => {
   const { id } = req.params
   try {
     await Tarefas.destroy({ where: { id } })
-    res.redirect('/tasks/pendentes') // Redireciona para tarefas pendentes após exclusão
+    res.redirect('/tasks/pendentes')
   } catch (err) {
     console.error(err)
     res.status(500).send('Erro ao excluir tarefa: ' + err.message)
@@ -93,7 +92,6 @@ const renderUpdateTasksPage = async (req, res) => {
   }
 }
 
-// Atualiza um registro de finanças
 const updateTasksRecord = async (req, res) => {
   const { id, titulo, descricao, data, prioridade } = req.body
 

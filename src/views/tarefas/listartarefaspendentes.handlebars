@@ -20,7 +20,6 @@
           <td>{{this.data}}</td>
           <td>{{this.prioridade}}</td>
           <td style='text-align: center;'>
-            <!-- Botões Editar e Excluir em uma linha -->
             <div
               style='display: flex; justify-content: center; gap: 10px; margin-bottom: 10px;'
             >
@@ -36,7 +35,6 @@
               >Excluir</a>
             </div>
 
-            <!-- Botão Concluir abaixo dos outros dois, com bordas -->
             <form action='/tasks/concluir/{{this.id}}' method='POST'>
               <button
                 type='submit'
