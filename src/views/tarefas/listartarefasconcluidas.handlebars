@@ -14,19 +14,19 @@
     </thead>
     <tbody>
       {{#each records}}
-      <tr>
-        <td>{{this.titulo}}</td>
-        <td>{{this.descricao}}</td>
-        <td>{{this.data}}</td>
-        <td>{{this.prioridade}}</td>
-        <td>
-          <a href='/tarefas/delete/{{this.id}}' class='btn-delete'>Excluir</a>
-        </td>
-      </tr>
+        <tr>
+          <td>{{this.titulo}}</td>
+          <td>{{this.descricao}}</td>
+          <td>{{this.data}}</td>
+          <td>{{this.prioridade}}</td>
+          <td>
+            <a href='/tasks/delete/{{this.id}}' class='btn-delete'>Excluir</a>
+          </td>
+        </tr>
       {{else}}
-      <tr>
-        <td colspan='5'>Nenhuma tarefa concluída encontrada.</td>
-      </tr>
+        <tr>
+          <td colspan='5'>Nenhuma tarefa concluída encontrada.</td>
+        </tr>
       {{/each}}
     </tbody>
   </table>

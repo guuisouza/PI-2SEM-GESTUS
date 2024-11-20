@@ -1,5 +1,4 @@
 const { DataTypes } = require('sequelize')
-
 const db = require('../db/connection')
 
 const Tarefa = db.define('Tarefa', {
@@ -7,19 +6,23 @@ const Tarefa = db.define('Tarefa', {
     type: DataTypes.STRING,
     allowNull: false
   },
-  desricao: {
+  descricao: {
     type: DataTypes.STRING(200),
     allowNull: false
   },
   data: {
-    type: DataTypes.STRING(6),
+    type: DataTypes.STRING(10),
     allowNull: false
   },
   prioridade: {
     type: DataTypes.STRING,
     allowNull: false
   },
- 
+  status: {
+    type: DataTypes.ENUM('pendente', 'concluida'),
+    allowNull: false,
+    defaultValue: 'pendente'
+  }
 })
 
 module.exports = Tarefa
